@@ -6,16 +6,18 @@ import Login from './assets/Login'
 import NavBar from './assets/NavBar'
 import Decklist from './assets/Decklist'
 import DecksContainer from './assets/DecksContainer'
+import Signup from './assets/Signup'
 
 function App() {
-  const [user, setUser] = useState('p')
+  const [user, setUser] = useState({name:'Johanna'})
 
   return (
     <div className="App">
       <NavBar user = {user}/>
       <Routes>
-        <Route path = '/' element = {<Home />} />
+        <Route path = '/' element = {<Home user = {user}/>} />
         <Route path = '/login' element = {<Login />} />
+        <Route path = '/signup' element = {<Signup />} />
         <Route path = '/decklist' element = {<Decklist />} />
         <Route path = '/alldecks' element = {<DecksContainer />} />
       </Routes>
