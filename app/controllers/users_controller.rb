@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     def create
         user = User.create!(user_params)
-        render json: status: :ok
+        render json: user, status: :ok
     end
 
     private 

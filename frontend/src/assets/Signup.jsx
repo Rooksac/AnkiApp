@@ -20,30 +20,32 @@ export default function Signup() {
             },
             body: JSON.stringify(newUser)
           })
-          .then((response) => response.json())
-          .then((data)=>{ 
-            if(data.ok){
-                navigate('/login')
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success!',
-                    text: 'Account Created!',
-                    color: '#FFC107',
-                    confirmButtonColor: '#FFC107',
-                  background: '#0D6EFD'
-                  })
-            }
-            else{
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops..',
-                    text: `${data.errors}`,
-                    color: '#FFC107',
-                    confirmButtonColor: '#FFC107',
-                  background: '#0D6EFD'
-                  })
-            }
-          });
+          .then((response) => {
+            if (response.ok){
+              response.json().then((data) => {
+              Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'Account Created!',
+                color: '#FFC107',
+                confirmButtonColor: '#FFC107',
+              background: '#0D6EFD'
+              })
+              console.log('Success:', data);}
+              
+            )
+            navigate('/login')}
+          else{response.json().then((errors) => {
+            console.log(errors)
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: `${errors.errors}`,
+              color: '#DC3545',
+              confirmButtonColor: '#DC3545',
+              background: '#0D6EFD'
+            })
+          });}})
     }
   return (
     <div>
