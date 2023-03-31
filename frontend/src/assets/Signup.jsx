@@ -40,12 +40,13 @@ export default function Signup() {
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
-              text: `${errors.errors}`,
+              text: `${errors.error}`,
               color: '#DC3545',
               confirmButtonColor: '#DC3545',
               background: '#0D6EFD'
             })
           });}})
+          setNewUser(initialState)
     }
   return (
     <div>
