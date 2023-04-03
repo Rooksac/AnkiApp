@@ -1,7 +1,7 @@
 import React from 'react'
 import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap'
 
-export default function NavBar({user}) {
+export default function NavBar({user, handleLogin}) {
   return (
     <div>
         {user?
@@ -24,7 +24,7 @@ export default function NavBar({user}) {
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link className='nav-link-text' href="/alldecks">Browse Decks</Nav.Link>
-            <Nav.Link className='nav-link-text' href="/login">Log Out</Nav.Link>
+            <Nav.Link className='nav-link-text' href="/login" onClick = {()=>handleLogin('')}>Log Out</Nav.Link>
           </Nav>
           </Navbar.Collapse>
         </Container>
