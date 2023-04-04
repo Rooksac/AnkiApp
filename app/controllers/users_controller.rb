@@ -14,12 +14,12 @@ class UsersController < ApplicationController
             #create token for front end
             token = JWT.encode({user_id: @user.id}, secret_key, 'HS256')
             #pass user instance and token to front end
-            render json: {user:@user, token: token}     
+            render json: {user: UserSerializer.new(@user), token: token}     
         end 
     end
 
     def me
-        render json: {user: @current_user}, status: :ok
+        render json: {user: UserSerializer.new(@current_user)}, status: :ok
     end
 
     private 
