@@ -7,6 +7,7 @@ import NavBar from './assets/NavBar'
 import Decklist from './assets/Decklist'
 import DecksContainer from './assets/DecksContainer'
 import Signup from './assets/Signup'
+import DeckLanding from './assets/DeckLanding'
 
 function App() {
   const [user, setUser] = useState('')
@@ -47,6 +48,7 @@ function handleLogout(){
         <Route path = '/signup' element = {<Signup />} />
         <Route path = '/decklist' element = {<Decklist />} />
         <Route path = '/alldecks' element = {<DecksContainer />} />
+        <Route path = 'deck/:id' element = {<DeckLanding />} />
       </Routes>
     </div>
   )
