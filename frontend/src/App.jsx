@@ -33,9 +33,14 @@ function App() {
   }
 }, []);
 
+function handleLogout(){
+  localStorage.removeItem("token")
+  setUser('') 
+}
+
   return (
     <div className="App">
-      <NavBar user = {user} handleLogin = {handleLogin}/>
+      <NavBar user = {user} handleLogout = {handleLogout}/>
       <Routes>
         <Route path = '/' element = {<Home user = {user}/>} />
         <Route path = '/login' element = {<Login handleLogin = {handleLogin}/>} />

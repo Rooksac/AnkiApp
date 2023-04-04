@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap'
 
-export default function NavBar({user, handleLogin}) {
+export default function NavBar({user, handleLogout}) {
   return (
     <div>
         {user?
@@ -14,17 +14,10 @@ export default function NavBar({user, handleLogin}) {
             navbarScroll>
             <Nav.Link className='nav-link-text' href="/">Home</Nav.Link>
             <NavDropdown title="My Decks" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
+              {user.decks.map(deck => <NavDropdown.Item href={`/decks/${deck.id}`}>{deck.name}</NavDropdown.Item>)}
             </NavDropdown>
             <Nav.Link className='nav-link-text' href="/alldecks">Browse Decks</Nav.Link>
-            <Nav.Link className='nav-link-text' href="/login" onClick = {()=>handleLogin('')}>Log Out</Nav.Link>
+            <Nav.Link className='nav-link-text' href="/login" onClick = {handleLogout}>Log Out</Nav.Link>
           </Nav>
           </Navbar.Collapse>
         </Container>
