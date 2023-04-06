@@ -5,7 +5,7 @@ export default function NavBar({user, handleLogout}) {
   return (
     <div>
         {user?
-    <Navbar bg="primary" variant="dark">
+    <Navbar bg="success" variant="dark">
         <Container>
           <Navbar.Brand ><h3 className='nav-link-text-brand'>Flashing Cards</h3></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -22,7 +22,7 @@ export default function NavBar({user, handleLogout}) {
           </Navbar.Collapse>
         </Container>
       </Navbar>:
-      <Navbar bg="primary" variant="dark">
+      <Navbar bg="success" variant="dark">
       <Container>
         <Navbar.Brand><h3 className='nav-link-text-brand'>Flashing Cards</h3></Navbar.Brand>
         <Nav className="me-auto">
