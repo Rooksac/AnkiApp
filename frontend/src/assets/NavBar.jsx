@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap'
+import {Container, Nav, Navbar, NavDropdown, Badge} from 'react-bootstrap'
+
 
 export default function NavBar({user, handleLogout}) {
   return (
@@ -14,7 +15,7 @@ export default function NavBar({user, handleLogout}) {
             navbarScroll>
             <Nav.Link className='nav-link-text' href="/">Home</Nav.Link>
             <NavDropdown title="My Decks" id="navbarScrollingDropdown">
-              {user.decks.map(deck => <NavDropdown.Item key = {deck.id} href={`/deck/${deck.id}`}>{deck.name}</NavDropdown.Item>)}
+              {user.decks.map(deck => <NavDropdown.Item key = {deck.id} href={`/deck/${deck.id}`}>{deck.name}{deck.has_cards_to_study?<Badge bg="warning">New Cards to Study!</Badge>:null}</NavDropdown.Item>)}
             </NavDropdown>
             <Nav.Link className='nav-link-text' href="/alldecks">Browse Decks</Nav.Link>
             <Nav.Link className='nav-link-text' href="/login" onClick = {handleLogout}>Log Out</Nav.Link>
