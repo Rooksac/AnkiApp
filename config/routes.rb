@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/studycards/:id', to: 'cards#study_cards'
   patch '/rightanswer/:id', to: 'cards#right_answer'
   patch '/wronganswer/:id', to: 'cards#wrong_answer'
+  post '/createdeck', to: 'decks#create'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
