@@ -10,6 +10,8 @@ import DeckLanding from './assets/DeckLanding'
 import DeckEdit from './assets/DeckEdit'
 import DeckStudy from './assets/DeckStudy'
 import CreateDeck from './assets/CreateDeck'
+import CardEdit from './assets/CardEdit'
+import CardAdd from './assets/CardAdd'
 
 function App() {
   const [user, setUser] = useState('')
@@ -53,6 +55,8 @@ function handleLogout(){
         <Route path = 'studydeck/:id' element = {<DeckStudy />} />
         <Route path = 'editdeck/:id' element = {<DeckEdit />} />
         <Route path = 'createdeck' element = {<CreateDeck />} />
+        <Route path = 'editcard/:id' element = {<CardEdit />} />
+        <Route path = 'addcard/:id' element = {<CardAdd />} />
       </Routes>
     </div>
   )

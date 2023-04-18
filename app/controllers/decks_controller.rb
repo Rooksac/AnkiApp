@@ -14,6 +14,12 @@ class DecksController < ApplicationController
         render json: deck, status: :ok
     end
 
+    def edit_cards
+        deck = Deck.find(params[:id])
+        cards = deck.cards
+        render json: cards, status: :ok
+    end
+
     private
 
     def deck_params

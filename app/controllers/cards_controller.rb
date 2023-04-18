@@ -20,4 +20,26 @@ class CardsController < ApplicationController
         card.save!
         render json: card, status: :ok
     end
+
+    def show
+        card = Card.find(params[:id])
+        render json: card, status: :ok
+    end
+
+    def update
+        card = Card.find(params[:id])
+        card.update!(card_params)
+        render json: card, status: :ok
+    end
+
+    def create
+        card = Card.create!(front_text: params[:front_text], front_image: params[:front_image], back_image: params[:back_image], back_text: params[:back_text], deck_id: params[:deck_id], show_next: DateTime.now(), curr_streak: 0)
+        render json: card, status: :ok
+    end
+
+    private
+
+    def card_params
+        params.permit(:front_text, :front_image, :back_text, :back_image)
+    end
 end
