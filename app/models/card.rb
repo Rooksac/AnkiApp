@@ -5,7 +5,7 @@ class Card < ApplicationRecord
     
     def set_show_next
         case self.curr_streak
-        when 1
+        when 0..1
             self.show_next = Time.zone.now + 5.minutes
         when 2
             self.show_next = Time.zone.now + 1.day

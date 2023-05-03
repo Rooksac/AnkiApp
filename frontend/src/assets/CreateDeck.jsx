@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Swal from 'sweetalert2'
 
 
 export default function CreateDeck() {
@@ -33,6 +34,7 @@ export default function CreateDeck() {
                 confirmButtonColor: '#FFC107',
               background: '#0D6EFD'
               })
+              setNewDeck(initialState)
               console.log('Success:', data);}
               
             )}
@@ -46,6 +48,7 @@ export default function CreateDeck() {
               confirmButtonColor: '#DC3545',
               background: '#0D6EFD'
             })
+            setNewDeck(initialState)
           });}})
         
     }

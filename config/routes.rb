@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   patch '/rightanswer/:id', to: 'cards#right_answer'
   patch '/wronganswer/:id', to: 'cards#wrong_answer'
   post '/createdeck', to: 'decks#create'
+  post '/addcards/:deck_id', to: 'cards#create'
+  get '/editcards/:id', to: 'decks#edit_cards'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
