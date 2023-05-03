@@ -16,7 +16,8 @@ export default function Signup() {
         fetch("http://localhost:3000/users", {
             method: "POST",
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type':'application/json',
+              'Origin':'http://localhost:5173'
             },
             body: JSON.stringify(newUser)
           })
