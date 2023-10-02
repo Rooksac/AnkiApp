@@ -37,6 +37,12 @@ class CardsController < ApplicationController
         render json: card, status: :ok
     end
 
+    def delete
+        card = Card.find(params[:id])
+        card.destroy!
+        head :no_content
+    end
+
     private
 
     def card_params

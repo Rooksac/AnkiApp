@@ -17,7 +17,7 @@ export default function NavBar({user, handleLogout}) {
             <NavDropdown title="My Decks" id="navbarScrollingDropdown">
               {user.decks.map(deck => <NavDropdown.Item key = {deck.id} href={`/deck/${deck.id}`}>{deck.name}{deck.has_cards_to_study?<Badge bg="warning">New Cards to Study!</Badge>:null}</NavDropdown.Item>)}
               <NavDropdown.Divider />
-              <NavDropdown.Item href='/createdeck'>+ Add new Deck</NavDropdown.Item>
+              <NavDropdown.Item href='/createdeck'>+ Create new Deck</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link className='nav-link-text' href="/alldecks">Browse Decks</Nav.Link>
             <Nav.Link className='nav-link-text' href="/login" onClick = {handleLogout}>Log Out</Nav.Link>

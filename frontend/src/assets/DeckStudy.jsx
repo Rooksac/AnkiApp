@@ -64,7 +64,7 @@ export default function DeckStudy() {
     <div>
         {cards.length===0?
         <p>Nothing to study here!  Check back later.</p>:
-        <Card>
+        <Card onClick = {handleCardClick}>
                 {showButtons?
                 <>
                 <Button variant="success" size="lg" onClick = {handleRight}>
@@ -75,7 +75,7 @@ export default function DeckStudy() {
                 </Button>
                 </>:
                 null}
-            <Card.Body onClick = {handleCardClick}>
+            <Card.Body>
                 <Card.Text>
                     {clicked?cards[0].front_text:cards[0].back_text}
                 </Card.Text>

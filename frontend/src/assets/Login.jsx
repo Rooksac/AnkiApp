@@ -7,10 +7,13 @@ export default function Login({handleLogin}) {
   let navigate = useNavigate()
   let initialState = {name:'', password:''}
   const [userData, setUserData] = useState(initialState)
+
+  //capture user input
   function handleChange(e){
     let {name, value} = e.target
     setUserData({...userData, [name]:value})
   }
+  
   function handleSubmit(e){
     e.preventDefault()
     fetch('http://localhost:3000/login', {

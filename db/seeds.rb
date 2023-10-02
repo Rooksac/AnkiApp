@@ -10,7 +10,7 @@ User.create!(name: 'JohannaBanana', password: '12345')
 puts 'users complete'
 puts 'seeding decks'
 
-Deck.create!(name: "Who's that Pokemon?", description: 'practice identifying pokemon by their picture', user_id: User.all.sample.id)
+Deck.create!(name: "Who's that Pokemon?", description: 'practice identifying pokemon by their picture', user_id: User.first.id)
 
 puts 'decks complete'
 puts 'seeding cards'
