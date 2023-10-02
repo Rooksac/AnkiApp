@@ -1,25 +1,31 @@
-# AnkiApp
-# README
+# Flashing Cards
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Flashing cards is a web application built with React.js and Ruby on Rails.  Users can log in to create their own decks of flashcards to study from.  The app will track how often you get certain cards right or wrong and uses this information to determine how often to show those cards. 
 
-Things you may want to cover:
+# Features
 
-* Ruby version
+* Create your own collections of flashcards to suit your studying needs
+* Customize individual cards with text and images of your choice
+* Backend logic determines which cards to show you based on how recently you have gotten a card right or wrong
+  
+# Technologies Used
 
-* System dependencies
+* React: A JavaScript library for building user interfaces.
+* Ruby on Rails: A web application framework for building server-side applications.
+* JWT (JSON Web Tokens): Used for secure user data encryption.
 
-* Configuration
+# Installation
 
-* Database creation
+To run the project locally, follow these steps:
 
-* Database initialization
+* Run bundle install in the main directory to install the necessary Ruby gems.
+* Navigate to the frontend directory using the command cd frontend.
+* Run npm install to install the required npm packages.
 
-* How to run the test suite
+# Usage
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Start by running the database migrations using rails db:migrate in the main directory to set up the required database tables.
+* Start the development server by running rails server in the main directory.
+* Run the npm run dev command in the frontend directory
+* Open a web browser and navigate to http://localhost:5173/ to acces the application
+  
