@@ -19,7 +19,7 @@ function App() {
   function handleLogin(user){
     setUser(user)
   }
-
+  //keeps user logged in on page reload
   useEffect(() => {
     let token = localStorage.getItem("token");
     if (token && !user.name) {

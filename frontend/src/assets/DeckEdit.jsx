@@ -21,6 +21,23 @@ export default function DeckEdit() {
         .then(data=>setCards(data))
   }
 
+  function deleteCard(id){
+    let token = localStorage.getItem('token')
+    fetch(`http://localhost:3000/deletecard/${id}`, {
+      method: 'DELETE',
+        headers:{
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        }
+    })
+    .then(handleCardDelete(id))
+  }
+
+  function handleCardDelete(id){
+    let updatedArray = cards.filter(card=>card.id != id)
+    setCards(updatedArray)
+  }
+
   useEffect(getCards, [])
   return (
     <>
@@ -43,6 +60,7 @@ export default function DeckEdit() {
             <th>{card.back_text}</th>
             <th><img src = {`${card.back_image}`} /></th>
             <th><Button variant="secondary" size="sm" onClick = {()=>navigate(`/editcard/${card.id}`)}>Edit Card</Button></th>
+            <th><Button variant="secondary" size="sm" onClick = {()=>deleteCard(card.id)}>Delete Card</Button></th>
           </tr>
           )}
         </tbody>
